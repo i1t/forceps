@@ -70,7 +70,7 @@ module Forceps
       def find_or_clone_local_copy_with_simple_attributes(remote_object)
         found_local_object = finder_for_remote_object(remote_object).call(remote_object)
         if found_local_object
-          copy_simple_attributes(found_local_object, remote_object)
+          # copy_simple_attributes(found_local_object, remote_object) # TODO: add :copy_attributes_on_reuse (default to false) to config
           reused_local_objects << found_local_object
           found_local_object
         else
